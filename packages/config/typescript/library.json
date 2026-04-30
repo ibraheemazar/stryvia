@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Library",
+  "extends": "./base.json",
+  "compilerOptions": {
+    // Libraries emit JS + .d.ts files for consumers.
+    "noEmit": false,
+
+    // Emit type declarations and source maps so downstream apps get IntelliSense
+    // and accurate stack traces back into source.
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
+    // Standard layout: src/ → dist/.
+    "rootDir": "src",
+    "outDir": "dist",
+
+    // Composite enables project references across the monorepo (turbo + tsc -b).
+    "composite": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "build", "**/*.test.ts", "**/*.spec.ts"]
+}

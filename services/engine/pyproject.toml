@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stryvia-engine"
+version = "0.0.0"
+description = "STRYVIA valuation engine — FastAPI service computing brand-integration valuations."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = { text = "Proprietary" }
+authors = [{ name = "STRYVIA" }]
+
+dependencies = [
+    "fastapi>=0.110,<1",
+    "uvicorn[standard]>=0.30,<1",
+    "sqlalchemy[asyncio]>=2.0,<3",
+    "alembic>=1.13,<2",
+    "psycopg[binary]>=3.1,<4",
+    "pydantic>=2.5,<3",
+    "pydantic-settings>=2.0,<3",
+    "python-dotenv>=1.0,<2",
+    "structlog>=24,<26",
+    "httpx>=0.27,<1",
+    "anthropic>=0.40,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.23",
+    "pytest-cov>=5",
+    "ruff>=0.5",
+    "mypy>=1.10",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+stryvia_engine = ["py.typed"]
+
+# ---------------------------------------------------------------------------
+# Ruff: linter + formatter.
+# ---------------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+extend-exclude = ["migrations/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "A", "C4", "SIM", "RET"]
+
+[tool.ruff.lint.per-file-ignores]
+# Star re-exports in package __init__ files are intentional.
+"__init__.py" = ["F401", "F403"]
+# Tests can use shorter, looser style.
+"tests/**/*.py" = ["N802", "N803"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+# ---------------------------------------------------------------------------
+# Mypy: type checker. Strict for application code, relaxed for tests.
+# ---------------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_redundant_casts = true
+no_implicit_reexport = true
+disallow_untyped_decorators = false
+plugins = ["pydantic.mypy"]
+exclude = ["migrations/versions/", "build/", "dist/"]
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+disallow_untyped_decorators = false
+
+# ---------------------------------------------------------------------------
+# Pytest.
+# ---------------------------------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-ra --strict-markers --strict-config"
+filterwarnings = [
+    "error",
+    # SQLAlchemy / pydantic occasionally emit deprecation noise from third-party deps.
+    "ignore::DeprecationWarning:passlib.*",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["stryvia_engine"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

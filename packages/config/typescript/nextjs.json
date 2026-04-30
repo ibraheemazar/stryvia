@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Next.js",
+  "extends": "./base.json",
+  "compilerOptions": {
+    // Browser globals + DOM types are needed in any Next.js app (server components included).
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+
+    // Next.js handles JSX transformation; emit raw JSX and let the toolchain transform it.
+    "jsx": "preserve",
+
+    // Next.js compiles via SWC, so TypeScript is type-check-only here.
+    "noEmit": true,
+
+    // Allow importing legacy .js files inside Next apps (e.g. config files).
+    "allowJs": true,
+
+    // Enables the Next.js TS server plugin for editor integration with the App Router.
+    "plugins": [{ "name": "next" }],
+
+    // Next.js apps include a generated next-env.d.ts; the @types resolution is implicit.
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", ".next", "dist", "build", "out"]
+}

@@ -1,0 +1,67 @@
+{
+  "app": {
+    "name": "STRYVIA",
+    "tagline": "Plan and value product placement before you shoot."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "reports": "Reports",
+    "settings": "Settings"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "email": "Email",
+    "password": "Password",
+    "signInTitle": "Sign in to STRYVIA",
+    "signInSubtitle": "Welcome back. Enter your credentials to continue.",
+    "signInSubline": "The pre-production workstation for product placement.",
+    "emailPlaceholder": "you@studio.com",
+    "passwordPlaceholder": "Your password",
+    "notWired": "Authentication is not yet wired in this build."
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "language": "Language"
+  },
+  "marketing": {
+    "heroTitle": "Brand integration, valued with rigor.",
+    "heroBody": "STRYVIA puts a defensible price on product placement, on-screen branding, and integrated marketing — for every scene, every release, every market.",
+    "ctaSignIn": "Sign in",
+    "ctaLearnMore": "Learn more"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "stats": {
+      "activeProjects": "Active projects",
+      "opportunitiesIdentified": "Opportunities identified",
+      "pendingReview": "Pending review"
+    },
+    "activity": {
+      "title": "Recent activity",
+      "empty": "No activity yet."
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "newProject": "New project",
+    "empty": "Start by creating your first project. Upload your script and let STRYVIA's AI identify integration opportunities and value them for your pre-production planning."
+  },
+  "reports": {
+    "title": "Reports",
+    "empty": "No reports yet."
+  },
+  "settings": {
+    "title": "Settings",
+    "language": {
+      "title": "Language preference",
+      "description": "Choose the language used across the producer workspace."
+    }
+  }
+}

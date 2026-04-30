@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.turbo/
+.vercel/
+coverage/
+
+# Lockfiles — let the package manager own formatting
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Generated files
+*.tsbuildinfo
+next-env.d.ts
+
+# Python (engine service) — formatted by ruff/black, not Prettier
+services/engine/
+__pycache__/
+.venv/
+venv/

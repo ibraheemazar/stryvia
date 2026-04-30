@@ -1,0 +1,51 @@
+/* ----------------------------------------------------------------------------
+ * STRYVIA design tokens
+ *
+ * CSS custom properties that aren't naturally expressed as Tailwind classes —
+ * shadcn/ui semantic colors (HSL triplets, no `hsl(...)` wrapper), our radius
+ * scale, and a couple of brand-specific gradients.
+ *
+ * The brand palette itself lives in tailwind.config.ts under `colors.brand`;
+ * this file maps the brand into shadcn's primary slot.
+ * ------------------------------------------------------------------------- */
+
+:root {
+  /* Surfaces */
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 47.4% 11.2%;
+
+  /* Brand → primary. #22C55E ≈ HSL(142.1, 70.6%, 45.3%); we use this as the
+     canonical primary. */
+  --primary: 142.1 70.6% 45.3%;
+  --primary-foreground: 144.9 80.4% 10%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 142.1 70.6% 45.3%;
+
+  --radius: 0.5rem;
+
+  /* Brand gradient — used sparingly on hero surfaces. */
+  --brand-gradient: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+
+  /* Soft, institutional shadow accents (alpha tuned). */
+  --shadow-color-soft: 220 3% 15%;
+}

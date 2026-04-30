@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# STRYVIA pre-commit hook
+# 1. Run lint-staged (prettier/eslint/ruff on staged files only)
+# 2. If any TS/TSX files were staged, run a workspace-wide typecheck
+#
+# Bypass in true emergencies with `git commit --no-verify`.
+
+set -e
+
+npx --no-install lint-staged
+
+staged_ts=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx)$' || true)
+if [ -n "$staged_ts" ]; then
+  echo "→ TypeScript files changed — running typecheck"
+  npm run typecheck
+fi

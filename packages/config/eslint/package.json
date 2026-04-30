@@ -1,0 +1,22 @@
+{
+  "name": "@stryvia/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared ESLint flat configurations for the STRYVIA monorepo.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "base.js",
+  "exports": {
+    "./base": "./base.js",
+    "./react": "./react.js",
+    "./nextjs": "./nextjs.js"
+  },
+  "files": [
+    "base.js",
+    "react.js",
+    "nextjs.js"
+  ],
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  }
+}

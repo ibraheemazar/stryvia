@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    // Modern runtime baseline. Node >=20 and all modern browsers support ES2022.
+    "target": "ES2022",
+    "lib": ["ES2022"],
+
+    // ESM-first. Bundlers (Next.js, tsup, vite) and modern Node both understand this.
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "force",
+
+    // Treat each file as an isolated module — required by SWC/esbuild/Babel toolchains
+    // that compile files one at a time.
+    "isolatedModules": true,
+    // Force `import type` syntax where appropriate; avoids surprises when a TS-only
+    // import accidentally gets emitted into runtime JS.
+    "verbatimModuleSyntax": true,
+
+    // Interop with CommonJS packages.
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    // Strictness — turn the dial up. These catch real bugs.
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "useUnknownInCatchVariables": true,
+
+    // Hygiene.
+    "forceConsistentCasingInFileNames": true,
+
+    // Skip type-checking declaration files in node_modules — massive speedup for monorepos.
+    "skipLibCheck": true,
+
+    // Cache type-check results between runs.
+    "incremental": true
+  },
+  "exclude": ["node_modules", "dist", "build", ".next", ".turbo", "coverage"]
+}

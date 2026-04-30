@@ -1,0 +1,139 @@
+# ----------------------------------------------------------------------------
+# Node / JavaScript / TypeScript
+# ----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.npm
+.yarn/
+.pnp.*
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.turbo/
+.swc/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+
+# Test / coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# ----------------------------------------------------------------------------
+# Python
+# ----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.tox/
+.hypothesis/
+htmlcov/
+.coverage
+.coverage.*
+
+# Distribution / packaging
+*.manifest
+*.spec
+wheels/
+share/python-wheels/
+
+# ----------------------------------------------------------------------------
+# Environment / secrets
+# ----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.crt
+secrets/
+
+# ----------------------------------------------------------------------------
+# IDEs / editors
+# ----------------------------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.iml
+*.ipr
+*.iws
+*.sublime-project
+*.sublime-workspace
+.history/
+*.swp
+*.swo
+*~
+
+# ----------------------------------------------------------------------------
+# macOS
+# ----------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+
+# ----------------------------------------------------------------------------
+# Windows / Linux misc
+# ----------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.lnk
+
+# ----------------------------------------------------------------------------
+# Logs / temp
+# ----------------------------------------------------------------------------
+logs/
+*.log
+tmp/
+temp/
+.cache/
+
+# ----------------------------------------------------------------------------
+# Docker / local infra
+# ----------------------------------------------------------------------------
+docker-compose.override.yml
+.docker/
+
+# ----------------------------------------------------------------------------
+# Claude Code — per-user, machine-local state (shared settings.json is tracked)
+# ----------------------------------------------------------------------------
+.claude/settings.local.json
+.claude/cache/
+.claude/history/

@@ -1,0 +1,59 @@
+# STRYVIA — local development infrastructure
+#
+# Brings up PostgreSQL 16 (the canonical data store for all six STRYVIA
+# domain schemas) plus Adminer (lightweight web UI) for visual inspection.
+#
+# Usage:
+#   cd infrastructure/docker
+#   docker compose up -d           # start
+#   docker compose ps              # status (postgres should report "healthy")
+#   docker compose down            # stop, keep data
+#   docker compose down -v         # stop, destroy data volume
+#
+# Credentials are read from ./.env (see .env.example for the keys).
+
+name: stryvia
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: stryvia-postgres
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      # Use scram-sha-256 for any auto-created roles (defense in depth).
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+      POSTGRES_INITDB_ARGS: '--auth-host=scram-sha-256 --auth-local=scram-sha-256'
+    volumes:
+      - stryvia_postgres_data:/var/lib/postgresql/data
+      # Initialization scripts only run on a *fresh* data volume.
+      # If you change them after first boot, you must `docker compose down -v`
+      # (or run scripts/db-reset.sh) to re-run them.
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  adminer:
+    image: adminer:4
+    container_name: stryvia-adminer
+    restart: unless-stopped
+    ports:
+      - '8080:8080'
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
+      ADMINER_DESIGN: pepa-linha
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  stryvia_postgres_data:
+    name: stryvia_postgres_data

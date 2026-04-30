@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# STRYVIA commit-msg hook
+# Validates the commit message against Conventional Commits.
+# See CONTRIBUTING.md for the format and examples.
+
+npx --no-install commitlint --edit "$1"

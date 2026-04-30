@@ -1,0 +1,133 @@
+{
+  "app": {
+    "name": "STRYVIA Admin",
+    "tagline": "Internal operations console"
+  },
+  "nav": {
+    "overview": "Overview",
+    "runs": "Engine Runs",
+    "benchmarks": "Benchmarks",
+    "organizations": "Organizations",
+    "users": "Users",
+    "audit": "Audit Log",
+    "system": "System Health"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "email": "Email",
+    "password": "Password",
+    "signInTitle": "Sign in to STRYVIA Admin",
+    "signInSubtitle": "Welcome back. Enter your credentials to continue.",
+    "signInSubline": "Internal access only.",
+    "emailPlaceholder": "you@stryvia.com",
+    "passwordPlaceholder": "Your password",
+    "notWired": "Authentication is not yet wired in this build."
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "save": "Save",
+    "cancel": "Cancel",
+    "refresh": "Refresh",
+    "search": "Search",
+    "filter": "Filter",
+    "empty": "Nothing here yet.",
+    "language": "Language",
+    "add": "Add",
+    "lastChecked": "Last checked",
+    "never": "never",
+    "notWired": "Not wired yet."
+  },
+  "status": {
+    "healthy": "Healthy",
+    "degraded": "Degraded",
+    "unavailable": "Unavailable",
+    "notConfigured": "Not Configured"
+  },
+  "marketing": {
+    "consoleTitle": "Admin Console",
+    "subline": "Operate STRYVIA: review AI analyses, monitor engine runs, manage benchmarks, and onboard organizations."
+  },
+  "overview": {
+    "title": "Overview",
+    "welcome": "Welcome",
+    "stats": {
+      "runsToday": "Engine runs today",
+      "pendingReview": "Pending review",
+      "activeOrganizations": "Active organizations",
+      "systemHealth": "System health"
+    },
+    "recentRuns": {
+      "title": "Recent runs",
+      "empty": "No engine runs yet."
+    }
+  },
+  "runs": {
+    "title": "Engine Runs",
+    "table": {
+      "runId": "Run ID",
+      "project": "Project",
+      "engineVersion": "Engine Version",
+      "status": "Status",
+      "started": "Started",
+      "duration": "Duration"
+    },
+    "empty": "No runs yet."
+  },
+  "benchmarks": {
+    "title": "Benchmarks",
+    "tabs": {
+      "rateCards": "Rate Cards",
+      "talentProfiles": "Talent Profiles",
+      "platformProfiles": "Platform Profiles"
+    },
+    "empty": {
+      "rateCards": "No rate cards yet.",
+      "talentProfiles": "No talent profiles yet.",
+      "platformProfiles": "No platform profiles yet."
+    }
+  },
+  "organizations": {
+    "title": "Organizations",
+    "filters": {
+      "all": "All",
+      "producers": "Producers",
+      "brands": "Brands",
+      "agencies": "Agencies",
+      "platforms": "Platforms"
+    },
+    "table": {
+      "name": "Name",
+      "type": "Type",
+      "status": "Status",
+      "joined": "Joined",
+      "lastActive": "Last Active"
+    },
+    "empty": "No organizations yet."
+  },
+  "users": {
+    "title": "Users",
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "organization": "Organization",
+      "role": "Role",
+      "lastLogin": "Last Login"
+    },
+    "empty": "No users yet."
+  },
+  "audit": {
+    "title": "Audit Log",
+    "searchPlaceholder": "Search audit events…",
+    "empty": "No audit events yet."
+  },
+  "system": {
+    "title": "System Health",
+    "cards": {
+      "engine": "Engine",
+      "database": "Database",
+      "jobQueue": "Job Queue"
+    }
+  }
+}

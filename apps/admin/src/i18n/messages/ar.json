@@ -1,0 +1,133 @@
+{
+  "app": {
+    "name": "ستريفيا - الإدارة",
+    "tagline": "وحدة التحكم الداخلية للعمليات"
+  },
+  "nav": {
+    "overview": "نظرة عامة",
+    "runs": "تشغيلات المحرك",
+    "benchmarks": "المعايير",
+    "organizations": "المؤسسات",
+    "users": "المستخدمون",
+    "audit": "سجل التدقيق",
+    "system": "صحة النظام"
+  },
+  "auth": {
+    "signIn": "تسجيل الدخول",
+    "signOut": "تسجيل الخروج",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "signInTitle": "تسجيل الدخول إلى ستريفيا - الإدارة",
+    "signInSubtitle": "مرحباً بعودتك. أدخل بياناتك للمتابعة.",
+    "signInSubline": "للوصول الداخلي فقط.",
+    "emailPlaceholder": "you@stryvia.com",
+    "passwordPlaceholder": "كلمة المرور",
+    "notWired": "لم يتم تفعيل المصادقة في هذه النسخة بعد."
+  },
+  "common": {
+    "loading": "جاري التحميل…",
+    "error": "حدث خطأ ما",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "refresh": "تحديث",
+    "search": "بحث",
+    "filter": "تصفية",
+    "empty": "لا يوجد شيء بعد.",
+    "language": "اللغة",
+    "add": "إضافة",
+    "lastChecked": "آخر فحص",
+    "never": "لم يحدث بعد",
+    "notWired": "لم يتم التفعيل بعد."
+  },
+  "status": {
+    "healthy": "سليم",
+    "degraded": "متدهور",
+    "unavailable": "غير متاح",
+    "notConfigured": "لم يتم التكوين"
+  },
+  "marketing": {
+    "consoleTitle": "وحدة التحكم الإدارية",
+    "subline": "تشغيل ستريفيا: مراجعة تحليلات الذكاء الاصطناعي، ومراقبة تشغيلات المحرك، وإدارة المعايير، وضم المؤسسات."
+  },
+  "overview": {
+    "title": "نظرة عامة",
+    "welcome": "مرحباً",
+    "stats": {
+      "runsToday": "تشغيلات المحرك اليوم",
+      "pendingReview": "بانتظار المراجعة",
+      "activeOrganizations": "المؤسسات النشطة",
+      "systemHealth": "صحة النظام"
+    },
+    "recentRuns": {
+      "title": "التشغيلات الأخيرة",
+      "empty": "لا توجد تشغيلات للمحرك بعد."
+    }
+  },
+  "runs": {
+    "title": "تشغيلات المحرك",
+    "table": {
+      "runId": "معرّف التشغيل",
+      "project": "المشروع",
+      "engineVersion": "إصدار المحرك",
+      "status": "الحالة",
+      "started": "بدأ في",
+      "duration": "المدة"
+    },
+    "empty": "لا توجد تشغيلات بعد."
+  },
+  "benchmarks": {
+    "title": "المعايير",
+    "tabs": {
+      "rateCards": "بطاقات الأسعار",
+      "talentProfiles": "الملفات الفنية",
+      "platformProfiles": "ملفات المنصات"
+    },
+    "empty": {
+      "rateCards": "لا توجد بطاقات أسعار بعد.",
+      "talentProfiles": "لا توجد ملفات فنية بعد.",
+      "platformProfiles": "لا توجد ملفات منصات بعد."
+    }
+  },
+  "organizations": {
+    "title": "المؤسسات",
+    "filters": {
+      "all": "الكل",
+      "producers": "المنتجون",
+      "brands": "العلامات التجارية",
+      "agencies": "الوكالات",
+      "platforms": "المنصات"
+    },
+    "table": {
+      "name": "الاسم",
+      "type": "النوع",
+      "status": "الحالة",
+      "joined": "تاريخ الانضمام",
+      "lastActive": "آخر نشاط"
+    },
+    "empty": "لا توجد مؤسسات بعد."
+  },
+  "users": {
+    "title": "المستخدمون",
+    "table": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "organization": "المؤسسة",
+      "role": "الدور",
+      "lastLogin": "آخر دخول"
+    },
+    "empty": "لا يوجد مستخدمون بعد."
+  },
+  "audit": {
+    "title": "سجل التدقيق",
+    "searchPlaceholder": "ابحث في أحداث التدقيق…",
+    "empty": "لا توجد أحداث تدقيق بعد."
+  },
+  "system": {
+    "title": "صحة النظام",
+    "cards": {
+      "engine": "المحرك",
+      "database": "قاعدة البيانات",
+      "jobQueue": "طابور المهام"
+    }
+  }
+}
