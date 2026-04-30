@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-import { SignInForm } from './sign-in-form';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { StryviaMark } from '@/components/layout/stryvia-mark';
 
 interface SignInPageProps {
   params: Promise<{ locale: string }>;
@@ -12,18 +13,16 @@ export default async function SignInPage({ params }: SignInPageProps) {
   const t = await getTranslations();
 
   return (
-    <SignInForm
-      heading={t('auth.signInTitle')}
-      subtitle={t('auth.signInSubtitle')}
-      subline={t('auth.signInSubline')}
-      labels={{
-        email: t('auth.email'),
-        password: t('auth.password'),
-        emailPlaceholder: t('auth.emailPlaceholder'),
-        passwordPlaceholder: t('auth.passwordPlaceholder'),
-        submit: t('auth.signIn'),
-        notWired: t('auth.notWired'),
-      }}
-    />
+    <Card className="w-full max-w-md shadow-elevated">
+      <CardHeader className="space-y-4 text-center">
+        <div className="flex justify-center">
+          <StryviaMark />
+        </div>
+        <CardTitle className="font-display text-2xl">{t('auth.placeholder.title')}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-center text-sm text-muted-foreground">{t('auth.placeholder.body')}</p>
+      </CardContent>
+    </Card>
   );
 }

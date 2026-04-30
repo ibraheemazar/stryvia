@@ -7,6 +7,11 @@ public releases begin.
 
 ## [Unreleased]
 
+### Changed
+
+- Phase 1B preparation: removed placeholder auth UI, pinned npm dependencies,
+  added Phase 1B context document.
+
 ## [0.1.0] - 2026-04-30
 
 ### Added

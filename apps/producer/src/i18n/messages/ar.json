@@ -13,14 +13,10 @@
   "auth": {
     "signIn": "تسجيل الدخول",
     "signOut": "تسجيل الخروج",
-    "email": "البريد الإلكتروني",
-    "password": "كلمة المرور",
-    "signInTitle": "تسجيل الدخول إلى ستريفيا",
-    "signInSubtitle": "مرحباً بعودتك. أدخل بياناتك للمتابعة.",
-    "signInSubline": "محطة العمل لما قبل الإنتاج لتكامل المنتجات.",
-    "emailPlaceholder": "you@studio.com",
-    "passwordPlaceholder": "كلمة المرور",
-    "notWired": "لم يتم تفعيل المصادقة في هذه النسخة بعد."
+    "placeholder": {
+      "title": "المصادقة قريباً",
+      "body": "يجري تجهيز نظام الدخول الآمن لستريفيا."
+    }
   },
   "common": {
     "loading": "جاري التحميل…",

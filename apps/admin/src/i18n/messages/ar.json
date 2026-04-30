@@ -16,14 +16,10 @@
   "auth": {
     "signIn": "تسجيل الدخول",
     "signOut": "تسجيل الخروج",
-    "email": "البريد الإلكتروني",
-    "password": "كلمة المرور",
-    "signInTitle": "تسجيل الدخول إلى ستريفيا - الإدارة",
-    "signInSubtitle": "مرحباً بعودتك. أدخل بياناتك للمتابعة.",
-    "signInSubline": "للوصول الداخلي فقط.",
-    "emailPlaceholder": "you@stryvia.com",
-    "passwordPlaceholder": "كلمة المرور",
-    "notWired": "لم يتم تفعيل المصادقة في هذه النسخة بعد."
+    "placeholder": {
+      "title": "وصول داخلي",
+      "body": "جارٍ تكوين نظام المصادقة."
+    }
   },
   "common": {
     "loading": "جاري التحميل…",
