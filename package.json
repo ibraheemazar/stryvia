@@ -16,7 +16,7 @@
     "dev:engine": "cd services/engine && . .venv/bin/activate && uvicorn stryvia_engine.main:app --reload --port 8000",
     "dev:producer": "npm run dev --workspace=@stryvia/producer",
     "dev:admin": "npm run dev --workspace=@stryvia/admin",
-    "dev:all": "concurrently --names engine,producer,admin --prefix-colors cyan,magenta,yellow \"npm run dev:engine\" \"npm run dev:producer\" \"npm run dev:admin\"",
+    "dev:all": "npm run dev:db && concurrently --names engine,producer,admin --prefix-colors cyan,magenta,yellow \"npm run dev:engine\" \"npm run dev:producer\" \"npm run dev:admin\"",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",

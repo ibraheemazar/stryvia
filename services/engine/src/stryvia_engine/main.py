@@ -17,6 +17,7 @@ from contextlib import asynccontextmanager
 from datetime import UTC, datetime
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from stryvia_engine.api.errors import install_exception_handlers
 from stryvia_engine.api.router import api_router
@@ -71,6 +72,16 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.state.engine = None
     app.state.session_factory = None
     app.state.build_timestamp = build_timestamp
+
+    if resolved.cors_allowed_origins:
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=resolved.cors_allowed_origins,
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+            expose_headers=["X-Trace-Id"],
+        )
 
     install_exception_handlers(app)
     app.include_router(api_router, prefix=resolved.api_prefix)

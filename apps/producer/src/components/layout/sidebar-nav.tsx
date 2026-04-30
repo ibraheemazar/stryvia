@@ -6,6 +6,7 @@ import {
   FolderKanban,
   FileBarChart,
   Settings,
+  HeartPulse,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -13,9 +14,10 @@ import { Link, usePathname } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 
 interface NavItem {
-  href: '/dashboard' | '/projects' | '/reports' | '/settings';
-  labelKey: 'nav.dashboard' | 'nav.projects' | 'nav.reports' | 'nav.settings';
+  href: '/dashboard' | '/projects' | '/reports' | '/settings' | '/system-status';
+  labelKey: 'nav.dashboard' | 'nav.projects' | 'nav.reports' | 'nav.settings' | 'nav.systemStatus';
   icon: LucideIcon;
+  devOnly?: boolean;
 }
 
 const PRIMARY: readonly NavItem[] = [
@@ -26,6 +28,7 @@ const PRIMARY: readonly NavItem[] = [
 
 const SECONDARY: readonly NavItem[] = [
   { href: '/settings', labelKey: 'nav.settings', icon: Settings },
+  { href: '/system-status', labelKey: 'nav.systemStatus', icon: HeartPulse, devOnly: true },
 ];
 
 interface SidebarNavProps {
@@ -52,7 +55,12 @@ export function SidebarNav({ onNavigate }: SidebarNavProps) {
           )}
         >
           <Icon className="h-4 w-4" />
-          <span>{t(item.labelKey)}</span>
+          <span className="flex-1 truncate">{t(item.labelKey)}</span>
+          {item.devOnly ? (
+            <span className="rounded bg-muted px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+              Dev
+            </span>
+          ) : null}
         </Link>
       </li>
     );

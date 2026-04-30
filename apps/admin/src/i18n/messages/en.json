@@ -10,7 +10,8 @@
     "organizations": "Organizations",
     "users": "Users",
     "audit": "Audit Log",
-    "system": "System Health"
+    "system": "System Health",
+    "systemStatus": "System Status"
   },
   "auth": {
     "signIn": "Sign in",

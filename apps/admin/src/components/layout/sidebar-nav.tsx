@@ -16,7 +16,15 @@ import { Link, usePathname } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 
 interface NavItem {
-  href: '/overview' | '/runs' | '/benchmarks' | '/organizations' | '/users' | '/audit' | '/system';
+  href:
+    | '/overview'
+    | '/runs'
+    | '/benchmarks'
+    | '/organizations'
+    | '/users'
+    | '/audit'
+    | '/system'
+    | '/system-status';
   labelKey:
     | 'nav.overview'
     | 'nav.runs'
@@ -24,8 +32,10 @@ interface NavItem {
     | 'nav.organizations'
     | 'nav.users'
     | 'nav.audit'
-    | 'nav.system';
+    | 'nav.system'
+    | 'nav.systemStatus';
   icon: LucideIcon;
+  devOnly?: boolean;
 }
 
 const PRIMARY: readonly NavItem[] = [
@@ -39,6 +49,7 @@ const PRIMARY: readonly NavItem[] = [
 const SECONDARY: readonly NavItem[] = [
   { href: '/audit', labelKey: 'nav.audit', icon: ScrollText },
   { href: '/system', labelKey: 'nav.system', icon: HeartPulse },
+  { href: '/system-status', labelKey: 'nav.systemStatus', icon: HeartPulse, devOnly: true },
 ];
 
 interface SidebarNavProps {
@@ -65,7 +76,12 @@ export function SidebarNav({ onNavigate }: SidebarNavProps) {
           )}
         >
           <Icon className="h-4 w-4" />
-          <span>{t(item.labelKey)}</span>
+          <span className="flex-1 truncate">{t(item.labelKey)}</span>
+          {item.devOnly ? (
+            <span className="rounded bg-muted px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+              Dev
+            </span>
+          ) : null}
         </Link>
       </li>
     );

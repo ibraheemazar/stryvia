@@ -9,10 +9,10 @@ testable.
 from __future__ import annotations
 
 from functools import lru_cache
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import Field, field_validator, model_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 from stryvia_engine.core.version import VERSION
 
@@ -47,6 +47,15 @@ class Settings(BaseSettings):
     service_version: str = VERSION
     api_prefix: str = "/api"
 
+    # CORS -------------------------------------------------------------------
+    # Browser origins allowed to call the engine. Supplied in env as a
+    # comma-separated string (e.g. ``http://localhost:3001,http://localhost:3002``).
+    # Server-to-server callers don't need to be listed — CORS is a browser-only
+    # mechanism.
+    cors_allowed_origins: Annotated[list[str], NoDecode] = Field(
+        default_factory=lambda: ["http://localhost:3001", "http://localhost:3002"],
+    )
+
     # Database ---------------------------------------------------------------
     # Async psycopg 3 URL, e.g.
     #   postgresql+psycopg://stryvia:<password>@localhost:5432/stryvia_dev
@@ -71,6 +80,15 @@ class Settings(BaseSettings):
         if normalised not in allowed:
             raise ValueError(f"LOG_LEVEL must be one of {sorted(allowed)}, got {value!r}")
         return normalised
+
+    @field_validator("cors_allowed_origins", mode="before")
+    @classmethod
+    def _split_cors_origins(cls, value: object) -> object:
+        # pydantic-settings treats unannotated env strings as JSON for list
+        # fields. Accept the more ergonomic comma-separated form too.
+        if isinstance(value, str):
+            return [origin.strip() for origin in value.split(",") if origin.strip()]
+        return value
 
     @model_validator(mode="after")
     def _require_anthropic_key_in_production(self) -> Settings:

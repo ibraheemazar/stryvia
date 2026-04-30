@@ -7,7 +7,8 @@
     "dashboard": "لوحة التحكم",
     "projects": "المشاريع",
     "reports": "التقارير",
-    "settings": "الإعدادات"
+    "settings": "الإعدادات",
+    "systemStatus": "حالة النظام"
   },
   "auth": {
     "signIn": "تسجيل الدخول",

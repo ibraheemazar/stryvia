@@ -10,7 +10,8 @@
     "organizations": "المؤسسات",
     "users": "المستخدمون",
     "audit": "سجل التدقيق",
-    "system": "صحة النظام"
+    "system": "صحة النظام",
+    "systemStatus": "حالة النظام"
   },
   "auth": {
     "signIn": "تسجيل الدخول",

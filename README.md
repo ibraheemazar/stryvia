@@ -63,6 +63,10 @@ After it finishes:
    ```bash
    npm run dev:all
    ```
+4. **Run the end-to-end smoke test** to confirm all four services
+   (database, engine, Producer, Admin) start together and communicate —
+   see [`docs/smoke-test.md`](./docs/smoke-test.md). Re-run it after any
+   significant change.
 
 ## Configuration
 
@@ -80,8 +84,8 @@ tracked in
 | `npm run dev:all`      | Engine + Producer + Admin in parallel (via `concurrently`)  | —          |
 | `npm run dev:db`       | Start the Postgres + Adminer Docker stack in the background | 5432, 8080 |
 | `npm run dev:engine`   | FastAPI valuation engine (`uvicorn --reload`)               | 8000       |
-| `npm run dev:producer` | Producer Workspace (Next.js)                                | 3000       |
-| `npm run dev:admin`    | Admin Console (Next.js)                                     | 3001       |
+| `npm run dev:producer` | Producer Workspace (Next.js)                                | 3001       |
+| `npm run dev:admin`    | Admin Console (Next.js)                                     | 3002       |
 | `npm run build`        | Build all workspaces                                        | —          |
 | `npm run lint`         | Lint all workspaces                                         | —          |
 | `npm run test`         | Run tests across all workspaces                             | —          |
