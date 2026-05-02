@@ -1,9 +1,9 @@
 /**
  * Typed fetch wrapper for the STRYVIA engine.
  *
- * Returns an `ApiResponse<T>` envelope (from `@stryvia/types`) regardless of
+ * Returns an ApiResponse<T> envelope (from @stryvia/types) regardless of
  * whether the engine itself emits one. The engine's current health endpoints
- * return raw bodies, so we wrap success bodies into `{ ok: true, data }`. When
+ * return raw bodies, so we wrap success bodies into { ok: true, data }. When
  * the engine starts returning native envelopes we'll detect and pass them
  * through unchanged.
  */
@@ -16,7 +16,7 @@ function getBaseUrl(): string {
   return process.env.NEXT_PUBLIC_ENGINE_URL ?? DEFAULT_BASE_URL;
 }
 
-interface RequestOptions {
+export interface RequestOptions {
   signal?: AbortSignal;
   headers?: Record<string, string>;
 }
@@ -108,7 +108,6 @@ async function request<T>(
   const parsed = await parseBody(response);
 
   if (isApiResponseShape(parsed)) {
-    // Engine already returned an envelope — pass through unchanged.
     return parsed as ApiResponse<T>;
   }
 
@@ -137,5 +136,3 @@ export const apiClient = {
   delete: <T>(path: string, options?: RequestOptions) =>
     request<T>('DELETE', path, undefined, options),
 };
-
-export type { ApiError, ApiResponse } from '@stryvia/types';
