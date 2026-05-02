@@ -5,10 +5,16 @@ import type { UseQueryResult } from '@tanstack/react-query';
 
 import { useEngineLiveness, useEngineReadiness, useEngineVersion } from '@/lib/api/health';
 import type { ApiResponse } from '@/lib/api/client';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Alert, AlertDescription, AlertTitle } from '@stryvia/ui/components/alert';
+import { Button } from '@stryvia/ui/components/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@stryvia/ui/components/card';
+import { Badge } from '@stryvia/ui/components/badge';
 
 type Phase = 'loading' | 'error' | 'envelope-error' | 'success';
 

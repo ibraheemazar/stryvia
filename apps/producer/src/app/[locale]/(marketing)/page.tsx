@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { Link } from '@/i18n/routing';
-import { Button } from '@/components/ui/button';
+import { Button } from '@stryvia/ui/components/button';
 
 interface MarketingPageProps {
   params: Promise<{ locale: string }>;

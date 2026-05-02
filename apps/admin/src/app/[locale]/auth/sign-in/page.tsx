@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@stryvia/ui/components/card';
 import { StryviaMark } from '@/components/layout/stryvia-mark';
 
 interface SignInPageProps {

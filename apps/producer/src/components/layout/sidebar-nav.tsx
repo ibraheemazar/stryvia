@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 
 import { Link, usePathname } from '@/i18n/routing';
-import { cn } from '@/lib/utils';
+import { cn } from '@stryvia/ui/lib/utils';
 
 interface NavItem {
   href: '/dashboard' | '/projects' | '/reports' | '/settings' | '/system-status';

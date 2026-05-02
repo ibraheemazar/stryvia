@@ -1,7 +1,13 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { AppShell } from '@/components/layout/app-shell';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@stryvia/ui/components/card';
 
 interface DashboardPageProps {
   params: Promise<{ locale: string }>;

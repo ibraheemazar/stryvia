@@ -8,9 +8,9 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { directionFor, isLocale, type Locale } from '@/i18n/config';
 import { routing } from '@/i18n/routing';
 import { AppProviders } from '@/components/providers/app-providers';
-import { Toaster } from '@/components/ui/sonner';
+import { Toaster } from '@stryvia/ui/components/sonner';
 
-import '@/styles/globals.css';
+import '@stryvia/ui/styles/globals.css';
 
 const fontSans = Inter({
   subsets: ['latin'],

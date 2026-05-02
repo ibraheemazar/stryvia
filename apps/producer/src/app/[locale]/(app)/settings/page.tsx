@@ -2,7 +2,13 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { AppShell } from '@/components/layout/app-shell';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@stryvia/ui/components/card';
 
 interface SettingsPageProps {
   params: Promise<{ locale: string }>;

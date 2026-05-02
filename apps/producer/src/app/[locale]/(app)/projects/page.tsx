@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { AppShell } from '@/components/layout/app-shell';
 import { ProjectsHeader } from './projects-header';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@stryvia/ui/components/card';
 
 interface ProjectsPageProps {
   params: Promise<{ locale: string }>;
