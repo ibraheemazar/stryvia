@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@stryvia/ui/lib/utils';
 
 interface StryviaMarkProps {
   className?: string;

@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Button } from '@stryvia/ui/components/button';
+import { cn } from '@stryvia/ui/lib/utils';
 
 type FilterKey = 'all' | 'producers' | 'brands' | 'agencies' | 'platforms';
 

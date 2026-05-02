@@ -6,9 +6,9 @@ import { Menu } from 'lucide-react';
 import { StryviaMark } from '@/components/layout/stryvia-mark';
 import { SidebarNav } from '@/components/layout/sidebar-nav';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Avatar, AvatarFallback } from '@stryvia/ui/components/avatar';
+import { Button } from '@stryvia/ui/components/button';
+import { Dialog, DialogContent, DialogTitle } from '@stryvia/ui/components/dialog';
 
 interface AppShellProps {
   title?: string;

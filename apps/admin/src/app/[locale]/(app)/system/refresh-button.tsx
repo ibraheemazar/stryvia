@@ -3,7 +3,7 @@
 import { RefreshCw } from 'lucide-react';
 import { toast } from 'sonner';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@stryvia/ui/components/button';
 
 interface RefreshButtonProps {
   label: string;

@@ -2,8 +2,8 @@ import { Search } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { AdminShell } from '@/components/layout/admin-shell';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
+import { Card, CardContent } from '@stryvia/ui/components/card';
+import { Input } from '@stryvia/ui/components/input';
 
 interface AuditPageProps {
   params: Promise<{ locale: string }>;

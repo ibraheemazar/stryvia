@@ -11,8 +11,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
+} from '@stryvia/ui/components/dropdown-menu';
+import { Button } from '@stryvia/ui/components/button';
 
 export function LanguageSwitcher() {
   const locale = useLocale() as Locale;

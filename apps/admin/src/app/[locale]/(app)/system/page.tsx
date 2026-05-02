@@ -1,8 +1,14 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { AdminShell } from '@/components/layout/admin-shell';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@stryvia/ui/components/card';
+import { cn } from '@stryvia/ui/lib/utils';
 
 import { RefreshButton } from './refresh-button';
 

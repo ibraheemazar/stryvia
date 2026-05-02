@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { AppShell } from '@/components/layout/app-shell';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@stryvia/ui/components/card';
 
 interface ReportsPageProps {
   params: Promise<{ locale: string }>;
