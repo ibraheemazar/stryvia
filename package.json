@@ -22,7 +22,8 @@
     "typecheck": "turbo run typecheck",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore",
-    "prepare": "husky"
+    "prepare": "husky",
+    "codegen": "openapi-typescript http://localhost:8000/openapi.json -o packages/api-client/src/generated/schema.d.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "20.5.3",
@@ -40,6 +41,7 @@
     "eslint-plugin-react-hooks": "5.2.0",
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
+    "openapi-typescript": "^7.4.4",
     "prettier": "3.8.3",
     "turbo": "2.9.6",
     "typescript": "5.9.3",

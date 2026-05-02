@@ -3,8 +3,8 @@
 import { RefreshCw, AlertTriangle } from 'lucide-react';
 import type { UseQueryResult } from '@tanstack/react-query';
 
-import { useEngineLiveness, useEngineReadiness, useEngineVersion } from '@/lib/api/health';
-import type { ApiResponse } from '@/lib/api/client';
+import { useEngineLiveness, useEngineReadiness, useEngineVersion } from '@stryvia/api-client/react';
+import type { ApiResponse } from '@stryvia/api-client';
 import { Alert, AlertDescription, AlertTitle } from '@stryvia/ui/components/alert';
 import { Button } from '@stryvia/ui/components/button';
 import {
